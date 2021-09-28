@@ -1,0 +1,41 @@
+.white {
+  background-color: #eee;
+  border-radius: 0 0 0.6vw 0.6vw;
+  box-shadow: 0 1vw 1vw -0.1vw #0004, inset 0 0 0 0.2vw #ccc,
+    inset 0 -1.4vw 0 0 #ccc;
+  width: 6vw;
+  height: 30vw;
+}
+.white.playing {
+  background-color: #ddd;
+  box-shadow: 0 0.8vw 2vw -0.4vw #0004, inset 0 0 0 0.2vw #bbb,
+    inset 0 -0.4vw 0 0 #bbb;
+}
+.black-keys {
+  left: 3.6vw;
+  gap: 2.8vw;
+}
+.black {
+  background-color: #222;
+  border-radius: 0 0 0.6vw 0.6vw;
+  box-shadow: 0.4vw 0 1vw 0 #0004, inset 0 -0.4vw 0 0.4vw #666,
+    inset 0 -1.4vw 0 0 #666;
+  width: 4vw;
+  height: 20vw;
+}
+.black:nth-child(3) {
+  margin-left: 4vw;
+}
+.black.playing {
+  background-color: #000;
+  box-shadow: 0.4vw 0 0.4vw 0 #0004, inset 0 -0.4vw 0 0.4vw #444,
+    inset 0 -0.8vw 0 0 #555;
+}
+.key {
+  bottom: 2vw;
+  transform: translateX(-50%);
+  @apply absolute left-1/2 text-gray-400 text-xs;
+}
+.drum.playing {
+  @apply transform scale-110 transition-all border-2 border-yellow-200;
+}

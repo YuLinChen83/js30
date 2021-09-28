@@ -1,56 +1,19 @@
-# template-vite-react-tailwind-jit
+# Javascript30 Practice with React
 
-- **template of:** vite + react
-- **tailwindcss:** v2.2.7
+![](https://javascript30.com/images/JS3-social-share.png)
 
-## Started
+[Demo](https://js30-beta.vercel.app/)
 
-with npm:
+## Available Commands
 
-```bash
-npm install
-```
+- `yarn dev`
 
-with yarn:
+## Built With
 
-```bash
-yarn
-```
+- React 7.0.0
+- Tailwindcss
+- Vite
 
----
+## References
 
-## Develop
-
-with npm:
-
-```bash
-npm run dev
-```
-
-with yarn:
-
-```bash
-yarn dev
-```
-
----
-
-## Build
-
-with npm:
-
-```bash
-npm run build
-```
-
-with yarn:
-
-```bash
-yarn build
-```
-
----
-
-<p align="center">
-<img src="./powered-by-vitawind-bright.png">
-</p>
+- [JavaScript30](https://github.com/wesbos/JavaScript30)
