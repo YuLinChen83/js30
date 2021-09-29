@@ -2,7 +2,10 @@ import { lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 const Menu = lazy(() => import('./Menu'));
-const routes = [{ path: '/1', component: lazy(() => import('./Day1')) }];
+const routes = [
+  { path: '/1', component: lazy(() => import('./Day1')) },
+  { path: '/2', component: lazy(() => import('./Day2')) },
+];
 
 const App = () => (
   <Router>

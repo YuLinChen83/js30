@@ -1,0 +1,4 @@
+.hand {
+  border-radius: 45% 0 0 45%;
+  @apply w-1/2 h-2 bg-black absolute top-1/2 origin-right rotate-90 transition-all ease-clock;
+}
