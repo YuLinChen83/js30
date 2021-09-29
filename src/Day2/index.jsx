@@ -3,12 +3,27 @@ import clsx from 'clsx';
 import './index.css';
 
 const Clock = () => {
-  const [dateTime, setDateTime] = useState(new Date());
+  const [timeDeg, setTimeDeg] = useState(() => {
+    const now = new Date();
+    const seconds = now.getSeconds();
+    const mins = now.getMinutes();
+    const hours = now.getHours();
 
-  const getDeg = (value, unit) => (value / unit) * 360 + 90;
+    const s = (seconds / 60) * 360 + 90;
+    const m = (mins / 60) * 360 + seconds * (6 / 60) + 90;
+    const h = (hours / 12) * 360 + mins * (30 / 60) + 90;
+    return { s, m, h };
+  });
+
+  const tic = () =>
+    setTimeDeg((prev) => ({
+      s: prev.s + 360 / 60,
+      m: prev.m + 360 / (60 * 60),
+      h: prev.h + 360 / (60 * 60 * 12),
+    }));
 
   useEffect(() => {
-    const timerID = setInterval(() => setDateTime(new Date()), 300);
+    const timerID = setInterval(() => tic(), 1000);
 
     return () => {
       clearInterval(timerID);
@@ -27,19 +42,19 @@ const Clock = () => {
           <div
             className="hand transform scale-y-70 scale-x-75"
             style={{
-              '--tw-rotate': `${getDeg(dateTime.getHours(), 12)}deg`,
+              '--tw-rotate': `${timeDeg.h}deg`,
             }}
           ></div>
           <div
             className="hand"
             style={{
-              '--tw-rotate': `${getDeg(dateTime.getMinutes(), 60)}deg`,
+              '--tw-rotate': `${timeDeg.m}deg`,
             }}
           ></div>
           <div
             className="hand transform scale-x-90 scale-y-50"
             style={{
-              '--tw-rotate': `${getDeg(dateTime.getSeconds(), 60)}deg`,
+              '--tw-rotate': `${timeDeg.s}deg`,
             }}
           ></div>
           <div className="absolute w-8 h-8 bg-white top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-circle shadow-clock-inner" />
