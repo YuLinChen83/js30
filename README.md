@@ -1,4 +1,4 @@
-# Javascript30 Practice with React
+# Javascript30 Practice with React, Tailwindcss
 
 ![](https://javascript30.com/images/JS3-social-share.png)
 

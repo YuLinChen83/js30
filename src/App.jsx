@@ -5,12 +5,13 @@ const Menu = lazy(() => import('./Menu'));
 const routes = [
   { path: '/1', component: lazy(() => import('./Day1')) },
   { path: '/2', component: lazy(() => import('./Day2')) },
+  { path: '/3', component: lazy(() => import('./Day3')) },
 ];
 
 const App = () => (
   <Router>
-    <Switch>
-      <Suspense fallback={null}>
+    <Suspense fallback={null}>
+      <Switch>
         {routes.map((route) => (
           <Route
             key={route.path}
@@ -22,8 +23,8 @@ const App = () => (
         <Route path="/">
           <Menu />
         </Route>
-      </Suspense>
-    </Switch>
+      </Switch>
+    </Suspense>
   </Router>
 );
 
