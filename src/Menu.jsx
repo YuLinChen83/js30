@@ -6,6 +6,7 @@ const Menu = () => (
     <Link to="/1">01 - JavaScript Drum Kit</Link>
     <Link to="/2">02 - JS and CSS Clock</Link>
     <Link to="/3">03 - CSS Variables</Link>
+    <Link to="/4">04 - Array Cardio</Link>
   </div>
 );
 
